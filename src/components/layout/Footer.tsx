@@ -19,38 +19,41 @@ function InstagramIcon() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#120a06] py-14">
+    <footer className="border-t border-white/10 bg-[#120a06] py-14 md:py-16">
       <Container>
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-sm">
-            <p className="text-xl text-white">
-              {siteData.brand}{" "}
-              <span className="text-[var(--color-gold)]">
-                {siteData.brandHighlight}
-              </span>
-            </p>
+          <div className="max-w-md">
+            <div className="flex items-center gap-4">
+              <img
+                src="/images/logo-ttc.png"
+                alt={`${siteData.brand} ${siteData.brandHighlight}`}
+                className="h-12 w-auto object-contain"
+              />
 
-            <p className="mt-4 text-sm leading-6 text-white/60">
+              <div className="hidden h-8 w-px bg-[rgba(212,175,55,0.22)] sm:block" />
+
+              <p className="hidden text-[10px] uppercase tracking-[0.28em] text-white/45 sm:block">
+                Genética de campeões
+              </p>
+            </div>
+
+            <p className="mt-6 text-sm leading-7 text-white/60">
               Cabanha dedicada ao Pônei Brasileiro, com trabalho orientado por
               seleção, apresentação e continuidade em pista e criação.
             </p>
 
-            <p className="mt-4 text-xs uppercase tracking-[0.16em] text-white/35">
-              Viamão • Gramado
-            </p>
-
-            <p className="mt-4 text-xs text-white/40">
-              © {new Date().getFullYear()} Todos os direitos reservados.
+            <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/35">
+              {siteData.location}
             </p>
           </div>
 
           <div className="flex flex-col items-start gap-5 md:items-end">
-            <div className="flex items-center gap-6 text-sm text-white/60">
+            <div className="flex flex-wrap items-center gap-5 text-sm text-white/60">
               <a
                 href={siteData.contact.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 transition-colors duration-300 hover:text-[var(--color-gold)]"
+                className="inline-flex items-center gap-2 transition-colors duration-300 hover:text-[var(--color-gold)]"
               >
                 <InstagramIcon />
                 Instagram
@@ -60,12 +63,18 @@ export function Footer() {
                 href={`https://wa.me/${siteData.contact.whatsapp}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 transition-colors duration-300 hover:text-[var(--color-gold)]"
+                className="inline-flex items-center gap-2 transition-colors duration-300 hover:text-[var(--color-gold)]"
               >
                 <MessageCircle size={16} strokeWidth={1.5} />
                 WhatsApp
               </a>
             </div>
+
+            <div className="h-px w-full max-w-[220px] bg-[rgba(212,175,55,0.12)] md:ml-auto" />
+
+            <p className="text-xs text-white/40">
+              © {new Date().getFullYear()} {siteData.brand} {siteData.brandHighlight}. Todos os direitos reservados.
+            </p>
           </div>
         </div>
       </Container>

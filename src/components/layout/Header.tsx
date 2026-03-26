@@ -5,21 +5,19 @@ import { Container } from "./Container";
 
 function BrandLockup() {
   return (
-    <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-      <div className="relative shrink-0">
-        <span className="block font-brand text-[1.95rem] font-bold leading-none tracking-[0.04em] text-[var(--color-gold)] sm:text-[2.15rem]">
-          TTC
-        </span>
-        <span className="absolute -bottom-1 left-0 h-px w-full bg-[var(--color-gold)]/18" />
-      </div>
+    <div className="flex items-center gap-4">
+      
+      <img
+        src="/images/logo-ttc.png"
+        alt="TTC Pôneis"
+        className="h-11 w-auto object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
+      />
 
-      <span className="h-5 w-px shrink-0 bg-[rgba(212,175,55,0.28)] sm:h-6" />
+      <div className="hidden sm:block h-6 w-px bg-[rgba(212,175,55,0.28)]" />
 
-      <div className="min-w-0">
-        <span className="block truncate text-[8px] uppercase leading-none tracking-[0.18em] text-white/50 sm:text-[9px] sm:tracking-[0.24em] md:text-[10px] md:tracking-[0.3em] md:text-white/55">
-          Genética de campeões
-        </span>
-      </div>
+      <span className="hidden sm:block text-[10px] uppercase tracking-[0.28em] text-white/50">
+        Genética de campeões
+      </span>
     </div>
   );
 }
@@ -49,7 +47,7 @@ export function Header() {
   return (
     <header
       ref={menuRef}
-      className="sticky top-0 z-50 border-b border-[#2a1d14] bg-[#140e0a]"
+      className="sticky top-0 z-50 border-b border-[rgba(212,175,55,0.14)] bg-[linear-gradient(180deg,rgba(30,21,15,0.98)_0%,rgba(20,14,10,0.96)_70%,rgba(16,11,8,0.98)_100%)] shadow-[0_8px_24px_rgba(0,0,0,0.18)]"
     >
       <Container>
         <div className="flex h-20 items-center justify-between">
