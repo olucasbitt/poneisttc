@@ -1,3 +1,4 @@
+import type { Award } from "../../types";
 function CompactAwardCard({ award }: { award: Award }) {
   const isMajor =
     award.title.toLowerCase().includes("grande campeã") ||
