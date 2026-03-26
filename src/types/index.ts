@@ -9,9 +9,10 @@ export type Metric = {
 };
 
 export type Award = {
-  year: string;
+  year: string | number;
+  name: string;
   title: string;
-  description: string;
+  description?: string;
 };
 
 export type Animal = {
