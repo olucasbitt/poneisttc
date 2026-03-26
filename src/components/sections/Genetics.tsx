@@ -8,12 +8,10 @@ export function Genetics() {
     <Section id="genetica" className="bg-[var(--color-cream)]">
       <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
         <SectionTitle
-          eyebrow="Genética"
-          title="Três pilares que orientam a seleção da TTC."
-          description="Uma base construída com atenção à morfologia, ao temperamento e à consistência de transmissão."
+          eyebrow="Seleção"
+          title="Critérios que orientam a formação do plantel."
+          description="A TTC conduz sua seleção a partir de fundamentos que ajudam a manter unidade, funcionalidade e clareza de padrão ao longo do tempo."
         />
-
-        
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">

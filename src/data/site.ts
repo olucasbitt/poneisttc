@@ -1,8 +1,8 @@
 import type { SiteData } from "../types";
 
 export const siteData: SiteData = {
-  brand: "Pôneis",
-  brandHighlight: "TTC",
+  brand: "TTC",
+  brandHighlight: "Pôneis",
   headline: "Genética premium para quem valoriza presença, docilidade e legado.",
   subheadline:
     "Uma vitrine refinada para apresentar garanhões, matrizes e a força genética da TTC com autoridade, sofisticação e apelo comercial.",
