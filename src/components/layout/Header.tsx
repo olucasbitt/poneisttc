@@ -109,8 +109,9 @@ export function Header() {
           <button
             type="button"
             onClick={() => {
-              setOpen((prev) => !prev);
-              if (open) setMobileSubmenuOpen(null);
+              const next = !open;
+              setOpen(next);
+              if (!next) setMobileSubmenuOpen(null);
             }}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
@@ -137,7 +138,10 @@ export function Header() {
                     <div className="flex items-center">
                       <a
                         href={item.href}
-                        onClick={() => setOpen(false)}
+                        onClick={() => {
+                          setOpen(false);
+                          setMobileSubmenuOpen(null);
+                        }}
                         className="flex-1 rounded-xl px-4 py-3 text-sm font-medium text-white/85 transition hover:bg-white/5 hover:text-white"
                       >
                         {item.label}
