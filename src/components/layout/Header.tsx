@@ -71,14 +71,14 @@ export function Header() {
             </nav>
 
             <a
-              href={`https://wa.me/${siteData.contact.whatsapp}`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 rounded-full border border-[rgba(212,175,55,0.4)] px-5 py-2.5 text-sm font-medium text-[var(--color-gold)] transition duration-300 hover:bg-[var(--color-gold)] hover:text-[var(--color-brown-900)]"
-            >
-              <MessageCircle size={16} strokeWidth={1.6} />
-              Falar sobre disponibilidade
-            </a>
+  href={`https://wa.me/${siteData.contact.whatsapp}`}
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex items-center gap-3 rounded-full bg-[var(--color-gold)] px-5 py-2.5 text-sm font-medium text-[var(--color-brown-900)] transition duration-300 hover:brightness-110"
+>
+  <MessageCircle size={16} strokeWidth={1.8} />
+  Falar sobre disponibilidade
+</a>
           </div>
 
           <button
