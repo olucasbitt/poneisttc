@@ -22,6 +22,8 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-[#120a06] py-14 md:py-16">
       <Container>
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          
+          {/* BLOCO DE MARCA */}
           <div className="max-w-md">
             <div className="flex items-center gap-4">
               <img
@@ -30,11 +32,19 @@ export function Footer() {
                 className="h-12 w-auto object-contain"
               />
 
-              <div className="hidden h-8 w-px bg-[rgba(212,175,55,0.22)] sm:block" />
+              {/* divisor (igual header) */}
+              <div className="h-6 w-px bg-[var(--color-gold)]/40" />
 
-              <p className="hidden text-[10px] uppercase tracking-[0.28em] text-white/45 sm:block">
-                Genética de campeões
-              </p>
+              {/* texto (igual header) */}
+              <div className="flex flex-col leading-tight">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
+                  {siteData.brand} {siteData.brandHighlight}
+                </span>
+
+                <span className="text-[10px] uppercase tracking-[0.22em] text-white/60">
+                  Genética de campeões
+                </span>
+              </div>
             </div>
 
             <p className="mt-6 text-sm leading-7 text-white/60">
@@ -47,6 +57,7 @@ export function Footer() {
             </p>
           </div>
 
+          {/* LINKS / CONTATO */}
           <div className="flex flex-col items-start gap-5 md:items-end">
             <div className="flex flex-wrap items-center gap-5 text-sm text-white/60">
               <a
@@ -73,7 +84,8 @@ export function Footer() {
             <div className="h-px w-full max-w-[220px] bg-[rgba(212,175,55,0.12)] md:ml-auto" />
 
             <p className="text-xs text-white/40">
-              © {new Date().getFullYear()} {siteData.brand} {siteData.brandHighlight}. Todos os direitos reservados.
+              © {new Date().getFullYear()} {siteData.brand}{" "}
+              {siteData.brandHighlight}. Todos os direitos reservados.
             </p>
           </div>
         </div>

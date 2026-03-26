@@ -5,7 +5,7 @@ import { SectionTitle } from "../ui/SectionTitle";
 
 export function Genetics() {
   return (
-    <Section id="genetica" className="bg-[var(--color-cream)]">
+    <Section id="genetica" className="bg-white">
       <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
         <SectionTitle
           eyebrow="Seleção"

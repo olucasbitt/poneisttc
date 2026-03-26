@@ -10,8 +10,8 @@ export function Home() {
     <>
       <Hero />
       <About />
-	  <Animals />
       <Genetics />
+	  <Animals />
       <Awards />
 	  <Contact />
       

@@ -33,16 +33,15 @@ export function Hero() {
           </p>
 
           {/* TITLE */}
-          <h1 className="mt-6 text-4xl font-light leading-[1.1] tracking-[-0.02em] md:text-6xl lg:text-[4.4rem]">
-            Seleção genética
-            <span className="block font-semibold">
-              construída com{" "}
-              <span className="text-[var(--color-gold)]">
-                critério
-              </span>
-            </span>
-          </h1>
-
+         <h1 className="mt-6 text-4xl font-semibold leading-[1.05] md:text-6xl lg:text-[4.2rem] font-playfair">
+  Seleção genética
+  <span className="block font-bold">
+    construída com{" "}
+    <span className="text-[var(--color-gold)]">
+      critério
+    </span>
+  </span>
+</h1>
           {/* LINE */}
           <div className="mt-8 h-[1px] w-24 bg-[var(--color-gold)] opacity-70" />
 

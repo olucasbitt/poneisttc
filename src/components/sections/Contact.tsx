@@ -19,31 +19,49 @@ export function Contact() {
               Contato
             </span>
 
-            <h2 className="mt-4 max-w-3xl text-[1.95rem] font-semibold leading-[1.03] tracking-[-0.03em] text-white sm:text-[2.2rem] md:text-[3rem]">
-              Entre em contato para conhecer o plantel da TTC.
+            <h2 className="mt-4 max-w-3xl font-heading text-[2.2rem] uppercase leading-[0.95] tracking-[0.03em] text-white sm:text-[2.6rem] md:text-[3.4rem]">
+              Atendimento direto para conhecer o plantel TTC
             </h2>
 
-            <p className="mt-5 max-w-[42rem] text-[15px] leading-7 text-white/85 md:text-lg md:leading-8">
-              A cabanha está à disposição para apresentar os animais,
-              compartilhar informações e conduzir cada conversa com clareza,
+            <p className="mt-5 max-w-[44rem] text-[15px] leading-7 text-white/85 md:text-lg md:leading-8">
+              Entre em contato para conhecer os animais disponíveis, receber
+              informações do plantel e conduzir a negociação com clareza,
               atenção e seriedade.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <span className="inline-flex items-center rounded-full border border-[rgba(212,175,55,0.28)] bg-[rgba(212,175,55,0.10)] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-white">
+                Entregas para todo o Brasil
+              </span>
+
+              <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-white/85">
+                Frete facilitado
+              </span>
+            </div>
 
             <div className="mt-6 h-px w-12 bg-[var(--color-gold)] opacity-90" />
 
             <p className="mt-5 max-w-xl text-sm italic leading-7 text-white/70">
-              Um plantel construído com critério merece uma apresentação à altura.
+              Um plantel construído com critério merece uma negociação conduzida
+              com a mesma seriedade.
             </p>
           </div>
 
           <div className="flex items-start lg:justify-end lg:pl-10">
-            <Button
-              href={`https://wa.me/${siteData.contact.whatsapp}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Fale Conosco
-            </Button>
+            <div className="w-full max-w-xs">
+              <Button
+                href={`https://wa.me/${siteData.contact.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full justify-center"
+              >
+                Falar no WhatsApp
+              </Button>
+
+              <p className="mt-3 text-center text-[11px] leading-5 text-white/55">
+                Atendimento direto para disponibilidade, valores e envio.
+              </p>
+            </div>
           </div>
         </div>
       </div>

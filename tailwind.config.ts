@@ -7,6 +7,7 @@ export default {
       fontFamily: {
         brand: ["Cinzel", "serif"],
 		display: ["Cormorant Garamond", "serif"],
+		heading: ["Bebas Neue", "sans-serif"], // 👈 NOVA
       },
       boxShadow: {
         soft: "0 10px 40px rgba(42, 30, 21, 0.08)",

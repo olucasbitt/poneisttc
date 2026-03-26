@@ -2,31 +2,93 @@ import type { Animal } from "../types";
 
 export const mares: Animal[] = [
   {
-    id: "matriz-exemplo-1",
-    name: "Matriz de Destaque",
-    image:
-      "https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=1200&q=80",
+    id: "ttc-bela-do-sul",
+    name: "TTC Bela do Sul",
+    image: "/images/matrizes/bela-do-sul.jpg",
     category: "Matriz",
+    sire: "Imperador da Serra",
+    dam: "Aurora do Rincão",
     highlights: [
-      "Base produtiva consistente",
-      "Feminilidade e temperamento",
-      "Espaço pronto para pedigree"
+      "Linha materna consistente",
+      "Boa feminilidade",
+      "Temperamento dócil"
     ],
     description:
-      "Seção preparada para valorizar linhagens maternas, produção, feminilidade e força de transmissão genética."
+      "Matriz de excelente expressão feminina, boa estrutura corporal e movimentação equilibrada. Reúne características desejáveis para produção com foco em padrão racial e regularidade."
   },
   {
-    id: "matriz-exemplo-2",
-    name: "Matriz Elite",
-    image:
-      "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
+    id: "ttc-fidalga-da-estancia",
+    name: "TTC Fidalga da Estância",
+    image: "/images/matrizes/fidalga.jpg",
     category: "Matriz",
+    sire: "Herdade Gold Boy",
+    dam: "Safira de Santa Clara",
     highlights: [
-      "Boa apresentação",
-      "Linha feminina forte",
-      "Valor comercial elevado"
+      "Estrutura equilibrada",
+      "Boa ossatura",
+      "Perfil comercial"
     ],
     description:
-      "Placeholder premium para inserção das matrizes principais da TTC com espaço para dados oficiais e fotos reais."
+      "Fêmea com boa presença e composição de conjunto. Combina feminilidade, equilíbrio morfológico e potencial para produção com alto valor visual."
+  },
+  {
+    id: "ttc-luna-dos-pinhais",
+    name: "TTC Luna dos Pinhais",
+    image: "/images/matrizes/luna.jpg",
+    category: "Matriz",
+    sire: "Nobre do Horizonte",
+    dam: "Lua Branca do Prado",
+    highlights: [
+      "Docilidade",
+      "Boa qualidade materna",
+      "Linhagem valorizada"
+    ],
+    description:
+      "Matriz jovem e promissora, com temperamento previsível e boa leitura de fêmea. Indicada para continuidade genética com consistência e qualidade."
+  },
+  {
+    id: "ttc-jade-da-vitoria",
+    name: "TTC Jade da Vitória",
+    image: "/images/matrizes/jade.jpg",
+    category: "Matriz",
+    sire: "Soberano das Coxilhas",
+    dam: "Jóia Fina do Capão",
+    highlights: [
+      "Presença marcante",
+      "Boa profundidade corporal",
+      "Produção promissora"
+    ],
+    description:
+      "Fêmea com boa capacidade corporal e expressão racial correta. Agrega valor ao plantel com base sólida e potencial de produção consistente."
+  },
+  {
+    id: "ttc-malaga-do-campo",
+    name: "TTC Malaga do Campo",
+    image: "/images/matrizes/malaga.jpg",
+    category: "Matriz",
+    sire: "Trovão do Vale",
+    dam: "Mocinha da Primavera",
+    highlights: [
+      "Boa linha superior",
+      "Feminilidade evidente",
+      "Seleção TTC"
+    ],
+    description:
+      "Matriz com boa harmonia de conjunto e frente feminina. Contribui com qualidade de padrão e docilidade dentro da seleção."
+  },
+  {
+    id: "ttc-serena-da-ponte",
+    name: "TTC Serena da Ponte",
+    image: "/images/matrizes/serena.jpg",
+    category: "Matriz",
+    sire: "Diamante de Santa Fé",
+    dam: "Serenata do Arroio",
+    highlights: [
+      "Boa linha feminina",
+      "Pedigree equilibrado",
+      "Potencial de legado"
+    ],
+    description:
+      "Fêmea com expressão suave e boa composição racial. Reforça o plantel com consistência e capacidade de transmissão genética."
   }
 ];

@@ -1,24 +1,55 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { MessageCircle, ChevronDown } from "lucide-react";
 import { siteData } from "../../data/site";
 import { Container } from "./Container";
+import { Link } from "react-router-dom";
 
 function BrandLockup() {
   return (
     <div className="flex items-center gap-4">
-      
       <img
         src="/images/logo-ttc.png"
         alt="TTC Pôneis"
         className="h-11 w-auto object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
       />
 
-      <div className="hidden sm:block h-6 w-px bg-[rgba(212,175,55,0.28)]" />
+      <div className="h-6 w-px bg-[var(--color-gold)]/40" />
 
-      <span className="hidden sm:block text-[10px] uppercase tracking-[0.28em] text-white/50">
-        Genética de campeões
-      </span>
+      <div className="flex flex-col leading-tight">
+        <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
+          TTC Pôneis
+        </span>
+
+        <span className="text-[10px] uppercase tracking-[0.22em] text-white/60">
+          Genética de campeões
+        </span>
+      </div>
     </div>
+  );
+}
+
+function isRouteLink(href: string) {
+  return href.startsWith("/") && !href.includes("#");
+}
+
+function renderNavLink(
+  href: string,
+  className: string,
+  children: ReactNode,
+  onClick?: () => void
+) {
+  if (isRouteLink(href)) {
+    return (
+      <Link to={href} onClick={onClick} className={className}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={href} onClick={onClick} className={className}>
+      {children}
+    </a>
   );
 }
 
@@ -27,12 +58,16 @@ export function Header() {
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
   const menuRef = useRef<HTMLElement | null>(null);
 
+  function closeMenus() {
+    setOpen(false);
+    setMobileSubmenuOpen(null);
+  }
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (!menuRef.current) return;
       if (!menuRef.current.contains(e.target as Node)) {
-        setOpen(false);
-        setMobileSubmenuOpen(null);
+        closeMenus();
       }
     }
 
@@ -51,41 +86,39 @@ export function Header() {
     >
       <Container>
         <div className="flex h-20 items-center justify-between">
-          <a
-            href="#top"
-            onClick={() => {
-              setOpen(false);
-              setMobileSubmenuOpen(null);
-            }}
+          <Link
+            to="/"
+            onClick={closeMenus}
             className="min-w-0"
-            aria-label="Ir para o topo"
+            aria-label="Ir para a página inicial"
           >
             <BrandLockup />
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-6 lg:flex">
             <nav className="flex items-center gap-0.5">
               {siteData.nav.map((item) => (
                 <div key={item.label} className="group relative">
-                  <a
-                    href={item.href}
-                    className="relative inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/85 transition duration-300 hover:text-white"
-                  >
-                    {item.label}
-                    {item.children && <ChevronDown size={16} strokeWidth={1.8} />}
-                    <span className="absolute bottom-1 left-4 right-4 h-px origin-left scale-x-0 bg-[var(--color-gold)] transition-transform duration-300 group-hover:scale-x-100" />
-                  </a>
+                  {renderNavLink(
+                    item.href,
+                    "relative inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/85 transition duration-300 hover:text-white",
+                    <>
+                      {item.label}
+                      {item.children && <ChevronDown size={16} strokeWidth={1.8} />}
+                      <span className="absolute bottom-1 left-4 right-4 h-px origin-left scale-x-0 bg-[var(--color-gold)] transition-transform duration-300 group-hover:scale-x-100" />
+                    </>
+                  )}
 
                   {item.children && (
                     <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[220px] translate-y-2 rounded-2xl border border-[#2a1d14] bg-[#1b130e] p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
                       {item.children.map((child) => (
-                        <a
-                          key={child.href}
-                          href={child.href}
-                          className="block rounded-xl px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-white"
-                        >
-                          {child.label}
-                        </a>
+                        <div key={`${item.label}-${child.href}`}>
+                          {renderNavLink(
+                            child.href,
+                            "block rounded-xl px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-white",
+                            child.label
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}
@@ -134,16 +167,14 @@ export function Header() {
                 return (
                   <div key={item.label} className="rounded-xl">
                     <div className="flex items-center">
-                      <a
-                        href={item.href}
-                        onClick={() => {
-                          setOpen(false);
-                          setMobileSubmenuOpen(null);
-                        }}
-                        className="flex-1 rounded-xl px-4 py-3 text-sm font-medium text-white/85 transition hover:bg-white/5 hover:text-white"
-                      >
-                        {item.label}
-                      </a>
+                      <div className="flex-1">
+                        {renderNavLink(
+                          item.href,
+                          "block rounded-xl px-4 py-3 text-sm font-medium text-white/85 transition hover:bg-white/5 hover:text-white",
+                          item.label,
+                          closeMenus
+                        )}
+                      </div>
 
                       <button
                         type="button"
@@ -173,17 +204,14 @@ export function Header() {
                     >
                       <div className="ml-4 mt-1 flex flex-col gap-1 border-l border-white/10 pl-3">
                         {item.children.map((child) => (
-                          <a
-                            key={child.href}
-                            href={child.href}
-                            onClick={() => {
-                              setOpen(false);
-                              setMobileSubmenuOpen(null);
-                            }}
-                            className="rounded-xl px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-white"
-                          >
-                            {child.label}
-                          </a>
+                          <div key={`${item.label}-${child.href}`}>
+                            {renderNavLink(
+                              child.href,
+                              "rounded-xl px-4 py-2 text-sm text-white/70 transition hover:bg-white/5 hover:text-white",
+                              child.label,
+                              closeMenus
+                            )}
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -192,17 +220,14 @@ export function Header() {
               }
 
               return (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => {
-                    setOpen(false);
-                    setMobileSubmenuOpen(null);
-                  }}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-white/85 transition hover:bg-white/5 hover:text-white"
-                >
-                  {item.label}
-                </a>
+                <div key={item.href}>
+                  {renderNavLink(
+                    item.href,
+                    "rounded-xl px-4 py-3 text-sm font-medium text-white/85 transition hover:bg-white/5 hover:text-white",
+                    item.label,
+                    closeMenus
+                  )}
+                </div>
               );
             })}
           </nav>
@@ -211,10 +236,7 @@ export function Header() {
             href={`https://wa.me/${siteData.contact.whatsapp}`}
             target="_blank"
             rel="noreferrer"
-            onClick={() => {
-              setOpen(false);
-              setMobileSubmenuOpen(null);
-            }}
+            onClick={closeMenus}
             className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-gold)] px-5 py-3 text-sm font-semibold text-[var(--color-brown-900)]"
           >
             <MessageCircle size={18} strokeWidth={1.8} />

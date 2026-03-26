@@ -39,16 +39,17 @@ export const siteData: SiteData = {
     instagram: "https://instagram.com/poneisttc"
   },
   nav: [
-  { label: "Início", href: "#top" },
-  {
-    label: "Genética",
-    href: "#genetica",
-    children: [
-      { label: "Garanhões", href: "#garanhoes" },
-      { label: "Matrizes", href: "#matrizes" },
-    ],
-  },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Contato", href: "#contato" },
-]
+    { label: "Início", href: "/" },
+    { label: "Sobre", href: "/#sobre" },
+    { label: "Genética", href: "/#genetica" },
+    {
+      label: "Animais",
+      href: "/#animais",
+      children: [
+        { label: "Garanhões", href: "/garanhoes" },
+        { label: "Matrizes", href: "/matrizes" }
+      ]
+    },
+    { label: "Contato", href: "/#contato" }
+  ]
 };
