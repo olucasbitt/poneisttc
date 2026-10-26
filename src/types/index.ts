@@ -35,6 +35,7 @@ export type SiteData = {
   brand: string;
   brandHighlight: string;
   headline: string;
+  slogan: string;
   subheadline: string;
   location: string;
   about: string[];

@@ -9,7 +9,7 @@ function BrandLockup() {
     <div className="flex items-center gap-4">
       <img
         src="/images/logo-ttc.png"
-        alt="TTC Pôneis"
+        alt="Pôneis TTC"
         className="h-11 w-auto object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
       />
 
@@ -17,11 +17,11 @@ function BrandLockup() {
 
       <div className="flex flex-col leading-tight">
         <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
-          TTC Pôneis
+          {siteData.brandHighlight} {siteData.brand} 
         </span>
 
         <span className="text-[10px] uppercase tracking-[0.22em] text-white/60">
-          Genética de campeões
+           {siteData.slogan}
         </span>
       </div>
     </div>

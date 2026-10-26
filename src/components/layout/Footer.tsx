@@ -38,11 +38,11 @@ export function Footer() {
               {/* texto (igual header) */}
               <div className="flex flex-col leading-tight">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
-                  {siteData.brand} {siteData.brandHighlight}
+                 {siteData.brandHighlight} {siteData.brand} 
                 </span>
 
                 <span className="text-[10px] uppercase tracking-[0.22em] text-white/60">
-                  Genética de campeões
+					{siteData.slogan}
                 </span>
               </div>
             </div>

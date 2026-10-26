@@ -4,6 +4,7 @@ export const siteData: SiteData = {
   brand: "TTC",
   brandHighlight: "Pôneis",
   headline: "Genética premium para quem valoriza presença, docilidade e legado.",
+  slogan: "Criando Excelência",
   subheadline:
     "Uma vitrine refinada para apresentar garanhões, matrizes e a força genética da TTC com autoridade, sofisticação e apelo comercial.",
   location: "Rio Grande do Sul, Brasil",
